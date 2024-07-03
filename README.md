@@ -1,0 +1,1 @@
+This repo is for one-file independent Python "projects".
