@@ -40,7 +40,8 @@ def printSumProductTable(startNum, endNum):
       print()
     else:
       sumWithUniqueProduct.add(r)
-      print("\tCONTAINS NO ONE!!!")
+      #print("\tCONTAINS NO ONE!!!")
+      print()
   print()
       
   productsNum2 = dict()
