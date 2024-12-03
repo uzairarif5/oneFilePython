@@ -63,11 +63,6 @@ class linear_combination:
         del self.weights[i]
     self.calLHS()
     self.shortenLikeTerms()
-  
-  def removeTerm(self, i: int):
-    del self.numbers[i]
-    del self.weights[i]
-    self.calLHS()
 
   def __str__(self):
     outputText = ""
@@ -110,6 +105,10 @@ def get_GCD_Steps(a: int, b: int, outputArr: list[linear_combination]):
   return outputArr
 
 def transportFirstTermToOtherSide(lc: linear_combination):
+  '''
+    change an equation of the form a = (b * c) + d
+    to d = a + (-b * c)
+  '''
   lhs = lc.getLHS()
   firstW = lc.getWeights()[0]
   firstN = lc.getNums()[0]
@@ -130,6 +129,4 @@ def gcdAsLinearCombination(a, b):
 
   return  curLC
 
-print(getGCD(66528, 52920))
-print(gcdAsLinearCombination(32321, 26513))
-print(gcdAsLinearCombination(66528, 52920))
+print(gcdAsLinearCombination(66528, 52920)) #1512 = (-5 * 52920) + (4 * 66528)

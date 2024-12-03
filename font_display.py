@@ -11,35 +11,33 @@ display = Frame(win)
 display.grid(padx=10,pady=10)
 
 def chosen():
-    global first
-    global default
-    global fs
-    if first == False:
-        default = show.get(1.0,'end')
-    else:
-        first = False
-    show.delete(1.0,'end')
-    try:
-        selection = listb.get(listb.curselection())
-        show.configure(font=(selection,fs))
-        show.insert('1.0', default)
-    except:
-        pass
-    show.tag_add('center','1.0','end')
+	global first
+	global default
+	global fs
+	if first == False:
+		default = show.get(1.0,'end')
+	else:
+		first = False
+	show.delete(1.0,'end')
+	try:
+		selection = listb.get(listb.curselection())
+		show.configure(font=(selection,fs))
+		show.insert('1.0', default)
+	except:
+		pass
+	show.tag_add('center','1.0','end')
 
 def incfs():
-    global fs
-    if int(fs) < 20:
-        fs = str(int(fs)+1)
-    number.configure(text=fs)
+	if fs < 20:
+		fs = fs+1
+	number.configure(text=fs)
 
 def decfs():
-    global fs
-    if int(fs) > 0:
-        fs = str(int(fs)-1)
-    number.configure(text=fs)
-    
-fs = '12'
+	if fs > 0:
+		fs = fs-1
+	number.configure(text=fs)
+	
+fs = 12
 listb = Listbox(display,height=30,width=35)
 listb.grid(padx=10,row=1,column=1,rowspan=2)
 cb = Button(display,text='Choose',command=chosen)
@@ -53,8 +51,8 @@ downb.grid(row=2,column=2,padx=('35','0'),pady=('26','0'))
 counter = 1
 
 for i in sorted(tkinter.font.families()):
-    counter += 1
-    listb.insert(counter,i)
+	counter += 1
+	listb.insert(counter,i)
 
 show = Text(display,bg='white',relief='solid',width=40,height=11)
 show.grid(row=1,column=2,columnspan=2,padx=10)
