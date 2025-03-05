@@ -8,6 +8,7 @@ from manim import *
 
 class TrapeziumArea(Scene):
 	def construct(self):
+		self.next_section("derivation 1")
 		trapezium = Polygon([-5, -1, 0], [-3,1,0] , [-1,1,0] , [0, -1, 0],color=TEAL_E,stroke_width=5)
 		self.play(Create(trapezium), run_time=0.5)
 		self.play(trapezium.animate.set_fill(TEAL_B, opacity=1), run_time=0.4)
@@ -106,6 +107,7 @@ class TrapeziumArea(Scene):
 		)
 		self.wait(1)
 
+		self.next_section("derivation 2")
 		trapezium2 = Polygon([-5, -1, 0], [-3,1,0] , [-1,1,0] , [0, -1, 0],color=TEAL_E,stroke_width=5,fill_color=TEAL_B,fill_opacity=1)
 		trapezium2.generate_target()
 		trapezium2.target.shift(2*UP)
