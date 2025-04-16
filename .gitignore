@@ -1,6 +1,7 @@
 \__pycache__
 \media
 *.txt
+output.*
 testing.py
 testing2.py
 testPost.py
